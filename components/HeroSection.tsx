@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Navbar from "./Navbar";
+import heroBackgroundImg from "@/public/img/pexels-sascha-hormel-1095814.jpg";
 
 export default function HeroSection() {
   return (
@@ -6,10 +8,12 @@ export default function HeroSection() {
       <Navbar />
 
       <div className="relative isolate overflow-hidden pt-14">
-        <img
-          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-          alt=""
+        <Image
+          src="/img/pexels-sascha-hormel-1095814.jpg"
+          width={1200}
+          height={800}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
+          alt="Mexim Trading"
         />
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

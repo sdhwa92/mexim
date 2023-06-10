@@ -10,7 +10,7 @@ interface Props {
 
 export default function Layout({ children, home }: Props) {
   return (
-    <div>
+    <div className="bg-gray-900">
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
