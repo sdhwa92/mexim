@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import Navbar from "./Navbar";
+import HeroSection from "./HeroSection";
 
 interface Props {
   children: ReactNode;
@@ -12,7 +14,11 @@ export default function Layout({ children, home }: Props) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {children}
+      {home ? <HeroSection /> : <Navbar />}
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:py-8 sm:py-6">
+        {children}
+      </div>
     </div>
   );
 }
