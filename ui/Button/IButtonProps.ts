@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export default interface IButtonProps {
-  dataTestId: string;
+  dataTestId?: string;
   onClick: () => void;
   extraClassNames?: string;
   children: ReactNode;

@@ -5,8 +5,12 @@ import {
   PaperAirplaneIcon,
 } from "@heroicons/react/20/solid";
 import { DefaultLayout } from "@/layouts";
-import { SimpleFeatureWithColumns } from "@/components/Feature";
+import {
+  SimpleFeatureWithColumns,
+  FeatureWithScreenshot,
+} from "@/components/Feature";
 import { HeroWithAngledImage } from "@/components/Hero";
+import { SimpleNewsletter } from "@/components/Newsletter";
 import { IFeature } from "@/interfaces";
 
 const features: IFeature[] = [
@@ -42,7 +46,12 @@ export default function Home() {
 
       <div>
         <HeroWithAngledImage />
+
         <SimpleFeatureWithColumns features={features} />
+
+        <FeatureWithScreenshot />
+
+        <SimpleNewsletter />
       </div>
     </DefaultLayout>
   );

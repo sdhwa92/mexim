@@ -1,9 +1,6 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { PlusIcon } from "@heroicons/react/20/solid";
-import { classNames } from "@/utils";
-import { Button } from "@/ui/Button";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { RoundedButton } from "@/ui/Button";
 
 export default function Example() {
   return (
@@ -73,13 +70,13 @@ export default function Example() {
                 </div>
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
-                    <Button
+                    <RoundedButton
                       dataTestId="navbar-left-button"
                       onClick={() => alert("click")}
                       extraClassNames="uppercase"
                     >
                       Request a Quote
-                    </Button>
+                    </RoundedButton>
                   </div>
                 </div>
               </div>
