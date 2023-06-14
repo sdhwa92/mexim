@@ -17,8 +17,6 @@ interface Props {
 }
 
 export default function DefaultLayout({ children, home }: Props) {
-  console.log(dmSans.className);
-
   return (
     <div className={classNames("bg-white", dmSans.className)}>
       <Head>

@@ -1,6 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { RoundedButton } from "@/ui/Button";
+import { COLOR_THEME } from "@/constants";
 
 export default function Example() {
   return (
@@ -74,6 +75,10 @@ export default function Example() {
                       dataTestId="navbar-left-button"
                       onClick={() => alert("click")}
                       extraClassNames="uppercase"
+                      color={COLOR_THEME.background.primary}
+                      hoverColor={COLOR_THEME.background.primaryHover}
+                      outlineColor={COLOR_THEME.outline.primaryFocusVisible}
+                      textColor={COLOR_THEME.text.primary}
                     >
                       Request a Quote
                     </RoundedButton>

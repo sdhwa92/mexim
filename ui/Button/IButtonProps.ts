@@ -5,4 +5,8 @@ export default interface IButtonProps {
   onClick: () => void;
   extraClassNames?: string;
   children: ReactNode;
+  color?: string;
+  hoverColor?: string;
+  outlineColor?: string;
+  textColor?: string;
 }
