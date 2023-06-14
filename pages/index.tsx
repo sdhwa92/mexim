@@ -5,7 +5,7 @@ import {
   PaperAirplaneIcon,
 } from "@heroicons/react/20/solid";
 import { DefaultLayout } from "@/layouts";
-import { FeatureSection } from "@/components/FeatureSection";
+import { SimpleFeatureWithColumns } from "@/components/Feature";
 import { HeroWithAngledImage } from "@/components/Hero";
 import { IFeature } from "@/interfaces";
 
@@ -42,7 +42,7 @@ export default function Home() {
 
       <div>
         <HeroWithAngledImage />
-        <FeatureSection features={features} />
+        <SimpleFeatureWithColumns features={features} />
       </div>
     </DefaultLayout>
   );
