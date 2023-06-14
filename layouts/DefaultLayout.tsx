@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Head from "next/head";
 import { DM_Sans } from "next/font/google";
 import { SimpleNavbar } from "@/components/Navbar";
+import { SimpleCenteredFooter } from "@/components/Footer";
 import { classNames } from "@/utils";
 
 const dmSans = DM_Sans({
@@ -27,6 +28,8 @@ export default function DefaultLayout({ children, home }: Props) {
 
       {/* remove paddings for the container => px-4 sm:px-6 lg:px-8 lg:py-8 sm:py-6 */}
       <div className="container mx-auto">{children}</div>
+
+      <SimpleCenteredFooter />
     </div>
   );
 }

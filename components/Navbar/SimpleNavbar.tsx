@@ -76,12 +76,9 @@ export default function Example() {
                     <Button
                       dataTestId="navbar-left-button"
                       onClick={() => alert("click")}
+                      extraClassNames="uppercase"
                     >
-                      <PlusIcon
-                        className="-ml-0.5 h-5 w-5"
-                        aria-hidden="true"
-                      />
-                      New Job
+                      Request a Quote
                     </Button>
                   </div>
                 </div>
