@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Navbar from "./Navbar";
-import heroBackgroundImg from "@/public/img/pexels-sascha-hormel-1095814.jpg";
+import { SimpleNavbar } from "../Navbar";
 
 export default function HeroSection() {
   return (
     <div className="bg-gray-900">
-      <Navbar />
+      <SimpleNavbar />
 
       <div className="relative isolate overflow-hidden pt-14">
         <Image

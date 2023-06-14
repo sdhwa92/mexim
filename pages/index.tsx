@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Layout from "@/components/Layout";
-import FeatureSection from "@/components/FeatureSection";
 import {
   LifebuoyIcon,
   UserIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/20/solid";
+import { DefaultLayout } from "@/layouts";
+import { FeatureSection } from "@/components/FeatureSection";
 import { IFeature } from "@/interfaces";
 
 const features: IFeature[] = [
@@ -34,7 +34,7 @@ const features: IFeature[] = [
 
 export default function Home() {
   return (
-    <Layout home>
+    <DefaultLayout home>
       <Head>
         <title>Home</title>
       </Head>
@@ -42,6 +42,6 @@ export default function Home() {
       <div>
         <FeatureSection features={features} />
       </div>
-    </Layout>
+    </DefaultLayout>
   );
 }
