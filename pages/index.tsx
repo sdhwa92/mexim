@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { DefaultLayout } from "@/layouts";
 import { FeatureSection } from "@/components/FeatureSection";
+import { HeroWithAngledImage } from "@/components/Hero";
 import { IFeature } from "@/interfaces";
 
 const features: IFeature[] = [
@@ -40,6 +41,7 @@ export default function Home() {
       </Head>
 
       <div>
+        <HeroWithAngledImage />
         <FeatureSection features={features} />
       </div>
     </DefaultLayout>
