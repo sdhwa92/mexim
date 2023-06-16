@@ -1,3 +1,5 @@
+import { COLOR_THEME } from "@/constants";
+
 interface IFeature {
   name: string;
   description: string;
@@ -11,16 +13,22 @@ type AppProps = {
 
 export default function SimpleFeatureWithColumns({ features }: AppProps) {
   return (
-    <div className="bg-gray-900 py-24 sm:py-32">
+    <div className={`${COLOR_THEME.background.primary} py-24 sm:py-32`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-400">
+          <h2
+            className={`text-base font-semibold leading-7 ${COLOR_THEME.text.secondary}`}
+          >
             WHY CHOOSE US
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <p
+            className={`mt-2 text-3xl font-bold tracking-tight ${COLOR_THEME.context.h1Reverse} sm:text-4xl`}
+          >
             Full-Service International Freight Forwarders
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          <p
+            className={`mt-6 text-lg leading-8 ${COLOR_THEME.context.pReverse}`}
+          >
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
             Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
             In mi viverra elit nunc.
@@ -30,9 +38,11 @@ export default function SimpleFeatureWithColumns({ features }: AppProps) {
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                <dt
+                  className={`flex items-center gap-x-3 text-base font-semibold leading-7 ${COLOR_THEME.context.pReverse}`}
+                >
                   <feature.icon
-                    className="h-5 w-5 flex-none text-indigo-400"
+                    className={`h-5 w-5 flex-none ${COLOR_THEME.text.secondary}`}
                     aria-hidden="true"
                   />
                   {feature.name}
@@ -42,7 +52,7 @@ export default function SimpleFeatureWithColumns({ features }: AppProps) {
                   <p className="mt-6">
                     <a
                       href={feature.link}
-                      className="text-sm font-semibold leading-6 text-indigo-400"
+                      className={`text-sm font-semibold leading-6 ${COLOR_THEME.text.secondary}`}
                     >
                       Learn more <span aria-hidden="true">→</span>
                     </a>
