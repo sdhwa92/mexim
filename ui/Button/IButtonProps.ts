@@ -10,6 +10,8 @@ export default interface IButtonProps {
   outlineColor?: string;
   textColor?: string;
   size?: ButtonSize;
+  type?: ButtonType;
 }
 
+export type ButtonType = "button" | "submit" | "reset";
 export type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";

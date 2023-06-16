@@ -12,6 +12,7 @@ const RoundedButton: FC<IButtonProps> = ({
   outlineColor,
   textColor,
   size = "md",
+  type = "button",
 }) => {
   const sizeStyleClasses = (size: ButtonSize): string => {
     if (size === "xs") {
@@ -30,7 +31,7 @@ const RoundedButton: FC<IButtonProps> = ({
   return (
     <button
       data-testid={dataTestId}
-      type="button"
+      type={type}
       className={classNames(
         "relative inline-flex items-center gap-x-1.5 rounded-full font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
         sizeStyleClasses(size),

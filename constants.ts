@@ -66,8 +66,11 @@ export const COLOR_THEME = {
     tertiaryFocusVisible: "focus-visible:outline-slate-100",
   },
   ring: {
+    primary: "ring-blue-800",
     primaryFocus: "focus:ring-blue-700",
+    secondary: "ring-blue-500",
     secondaryFocus: "focus:ring-blue-400",
+    tertiary: "ring-slate-200",
     tertiaryFocus: "focus:ring-slate-300",
   },
 };
