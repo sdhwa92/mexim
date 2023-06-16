@@ -6,6 +6,7 @@ import {
 import Image from "next/image";
 import screenshotImage from "@/public/img/Artboard-1-2.webp";
 import { RoundedButton } from "@/ui/Button";
+import { COLOR_THEME } from "@/constants";
 
 const features = [
   {
@@ -35,23 +36,31 @@ export default function Example() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:ml-auto lg:pl-4 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">
+              <h2
+                className={`text-base font-semibold leading-7 ${COLOR_THEME.text.primary}`}
+              >
                 Deploy faster
               </h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <p
+                className={`mt-2 text-3xl font-bold tracking-tight ${COLOR_THEME.context.h1} sm:text-4xl`}
+              >
                 A better workflow
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className={`mt-6 text-lg leading-8 ${COLOR_THEME.context.h3}`}>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Maiores impedit perferendis suscipit eaque, iste dolor
                 cupiditate blanditiis ratione.
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+              <dl
+                className={`mt-10 max-w-xl space-y-8 text-base leading-7 ${COLOR_THEME.context.p} lg:max-w-none`}
+              >
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-gray-900">
+                    <dt
+                      className={`inline font-semibold ${COLOR_THEME.context.p}`}
+                    >
                       <feature.icon
-                        className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                        className={`absolute left-1 top-1 h-5 w-5 ${COLOR_THEME.text.primary}`}
                         aria-hidden="true"
                       />
                       {feature.name}
@@ -62,9 +71,13 @@ export default function Example() {
               </dl>
               <div className="my-8">
                 <RoundedButton
-                  dataTestId=""
                   onClick={() => alert("click")}
                   extraClassNames="uppercase"
+                  color={COLOR_THEME.background.primary}
+                  hoverColor={COLOR_THEME.background.primaryHover}
+                  outlineColor={COLOR_THEME.outline.primaryFocusVisible}
+                  textColor={"text-white"}
+                  size="xl"
                 >
                   Read our success stories
                 </RoundedButton>
