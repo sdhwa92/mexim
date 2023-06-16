@@ -12,6 +12,7 @@ import {
 import { HeroWithAngledImage } from "@/components/Hero";
 import { SimpleNewsletter } from "@/components/Newsletter";
 import { IFeature } from "@/interfaces";
+import FeatureWithScreenshotPanel from "@/components/Feature/FeatureWithScreenshotPanel";
 
 const features: IFeature[] = [
   {
@@ -50,6 +51,8 @@ export default function Home() {
         <SimpleFeatureWithColumns features={features} />
 
         <FeatureWithScreenshot />
+
+        <FeatureWithScreenshotPanel />
 
         <SimpleNewsletter />
       </div>

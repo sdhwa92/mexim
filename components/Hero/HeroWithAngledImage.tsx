@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { COLOR_THEME } from "@/constants";
-import { classNames } from "@/utils";
 import { Button } from "@/ui/Button";
+import heroImage from "@/public/img/aerial-view-cargo-ship-cargo-container-harbor.jpg";
 
 export default function HeroWithAngledImage() {
   return (
@@ -35,7 +35,7 @@ export default function HeroWithAngledImage() {
                 <h1
                   className={`text-4xl font-bold tracking-tight ${COLOR_THEME.context.h1} sm:text-6xl`}
                 >
-                  Data to enrich your online business
+                  We Consult. We Plan. We Deliver.
                 </h1>
                 <p
                   className={`mt-6 text-lg leading-8 ${COLOR_THEME.context.p}`}
@@ -69,7 +69,7 @@ export default function HeroWithAngledImage() {
         </div>
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <Image
-            src="/img/pexels-sascha-hormel-1095814.jpg"
+            src={heroImage}
             width={1200}
             height={800}
             className="inset-0 -z-10 h-full w-full object-cover"
