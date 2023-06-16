@@ -47,7 +47,9 @@ export default function SimpleFeatureWithColumns({ features }: AppProps) {
                   />
                   {feature.name}
                 </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                <dd
+                  className={`mt-4 flex flex-auto flex-col text-base leading-7 ${COLOR_THEME.context.pReverse}`}
+                >
                   <p className="flex-auto">{feature.description}</p>
                   <p className="mt-6">
                     <a
