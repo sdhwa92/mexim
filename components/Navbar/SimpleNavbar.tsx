@@ -106,7 +106,7 @@ export default function SimpleNavbar() {
                       color={COLOR_THEME.background.primary}
                       hoverColor={COLOR_THEME.background.primaryHover}
                       outlineColor={COLOR_THEME.outline.primaryFocusVisible}
-                      textColor={COLOR_THEME.text.primary}
+                      textColor={"text-white"}
                       size="xl"
                     >
                       Request a Quote
