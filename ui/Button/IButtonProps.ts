@@ -9,4 +9,7 @@ export default interface IButtonProps {
   hoverColor?: string;
   outlineColor?: string;
   textColor?: string;
+  size?: ButtonSize;
 }
+
+export type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";

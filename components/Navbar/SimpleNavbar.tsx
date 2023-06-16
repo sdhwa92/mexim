@@ -2,8 +2,9 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { RoundedButton } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
+import { classNames } from "@/utils";
 
-export default function Example() {
+export default function SimpleNavbar() {
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -14,7 +15,15 @@ export default function Example() {
                 <div className="flex">
                   <div className="-ml-2 mr-2 flex items-center md:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Disclosure.Button
+                      className={classNames(
+                        "inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset",
+                        COLOR_THEME.ring.primaryFocus,
+                        COLOR_THEME.text.tertiary,
+                        COLOR_THEME.text.tertiaryHover,
+                        COLOR_THEME.background.tertiaryHover
+                      )}
+                    >
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon
@@ -45,25 +54,44 @@ export default function Example() {
                     {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                     <a
                       href="#"
-                      className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                      className={classNames(
+                        "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
+                        COLOR_THEME.border.primary,
+                        COLOR_THEME.text.tertiary
+                      )}
                     >
                       Dashboard
                     </a>
                     <a
                       href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      className={classNames(
+                        "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium",
+                        COLOR_THEME.text.tertiaryReverse,
+                        COLOR_THEME.text.tertiaryHover,
+                        COLOR_THEME.border.tertiaryHover
+                      )}
                     >
                       Team
                     </a>
                     <a
                       href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      className={classNames(
+                        "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium",
+                        COLOR_THEME.text.tertiaryReverse,
+                        COLOR_THEME.text.tertiaryHover,
+                        COLOR_THEME.border.tertiaryHover
+                      )}
                     >
                       Projects
                     </a>
                     <a
                       href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      className={classNames(
+                        "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium",
+                        COLOR_THEME.text.tertiaryReverse,
+                        COLOR_THEME.text.tertiaryHover,
+                        COLOR_THEME.border.tertiaryHover
+                      )}
                     >
                       Calendar
                     </a>
@@ -79,6 +107,7 @@ export default function Example() {
                       hoverColor={COLOR_THEME.background.primaryHover}
                       outlineColor={COLOR_THEME.outline.primaryFocusVisible}
                       textColor={COLOR_THEME.text.primary}
+                      size="xl"
                     >
                       Request a Quote
                     </RoundedButton>
@@ -94,28 +123,51 @@ export default function Example() {
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700 sm:pl-5 sm:pr-6"
+                className={classNames(
+                  "block border-l-4 py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
+                  COLOR_THEME.border.primary,
+                  COLOR_THEME.background.primaryReverse,
+                  COLOR_THEME.text.tertiary
+                )}
               >
                 Dashboard
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+                className={classNames(
+                  "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
+                  COLOR_THEME.text.tertiaryReverse,
+                  COLOR_THEME.text.tertiaryHover,
+                  COLOR_THEME.border.tertiaryHover,
+                  COLOR_THEME.background.tertiaryHover
+                )}
               >
                 Team
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+                className={classNames(
+                  "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
+                  COLOR_THEME.text.tertiaryReverse,
+                  COLOR_THEME.text.tertiaryHover,
+                  COLOR_THEME.border.tertiaryHover,
+                  COLOR_THEME.background.tertiaryHover
+                )}
               >
                 Projects
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+                className={classNames(
+                  "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
+                  COLOR_THEME.text.tertiaryReverse,
+                  COLOR_THEME.text.tertiaryHover,
+                  COLOR_THEME.border.tertiaryHover,
+                  COLOR_THEME.background.tertiaryHover
+                )}
               >
                 Calendar
               </Disclosure.Button>
