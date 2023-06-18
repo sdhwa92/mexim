@@ -1,10 +1,21 @@
+import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { RoundedButton } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
-import { classNames } from "@/utils";
+import { classNames, isActivePage } from "@/utils";
 
-export default function SimpleNavbar() {
+interface Props {
+  menuItems: {
+    name: string;
+    link: string;
+    isNewTab?: boolean;
+  }[];
+}
+
+export default function SimpleNavbar({ menuItems }: Props) {
+  const { pathname } = useRouter();
+
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -52,49 +63,30 @@ export default function SimpleNavbar() {
                   </div>
                   <div className="hidden md:ml-6 md:flex md:space-x-8">
                     {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                    <a
-                      href="#"
-                      className={classNames(
-                        "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
-                        COLOR_THEME.border.primary,
-                        COLOR_THEME.text.tertiary
-                      )}
-                    >
-                      Dashboard
-                    </a>
-                    <a
-                      href="#"
-                      className={classNames(
-                        "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium",
-                        COLOR_THEME.text.tertiaryReverse,
-                        COLOR_THEME.text.tertiaryHover,
-                        COLOR_THEME.border.tertiaryHover
-                      )}
-                    >
-                      Team
-                    </a>
-                    <a
-                      href="#"
-                      className={classNames(
-                        "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium",
-                        COLOR_THEME.text.tertiaryReverse,
-                        COLOR_THEME.text.tertiaryHover,
-                        COLOR_THEME.border.tertiaryHover
-                      )}
-                    >
-                      Projects
-                    </a>
-                    <a
-                      href="#"
-                      className={classNames(
-                        "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium",
-                        COLOR_THEME.text.tertiaryReverse,
-                        COLOR_THEME.text.tertiaryHover,
-                        COLOR_THEME.border.tertiaryHover
-                      )}
-                    >
-                      Calendar
-                    </a>
+
+                    {menuItems.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.link}
+                        className={classNames(
+                          "inline-flex items-center px-1 pt-1 text-sm font-medium uppercase",
+                          isActivePage(item.link, pathname)
+                            ? [
+                                "border-b-2",
+                                COLOR_THEME.border.primary,
+                                COLOR_THEME.text.tertiary,
+                              ].join(" ")
+                            : [
+                                "border-transparent",
+                                COLOR_THEME.text.tertiaryReverse,
+                                COLOR_THEME.text.tertiaryHover,
+                                COLOR_THEME.border.tertiaryHover,
+                              ].join(" ")
+                        )}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -120,57 +112,32 @@ export default function SimpleNavbar() {
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 pb-3 pt-2">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className={classNames(
-                  "block border-l-4 py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
-                  COLOR_THEME.border.primary,
-                  COLOR_THEME.background.primaryReverse,
-                  COLOR_THEME.text.tertiary
-                )}
-              >
-                Dashboard
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className={classNames(
-                  "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
-                  COLOR_THEME.text.tertiaryReverse,
-                  COLOR_THEME.text.tertiaryHover,
-                  COLOR_THEME.border.tertiaryHover,
-                  COLOR_THEME.background.tertiaryHover
-                )}
-              >
-                Team
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className={classNames(
-                  "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
-                  COLOR_THEME.text.tertiaryReverse,
-                  COLOR_THEME.text.tertiaryHover,
-                  COLOR_THEME.border.tertiaryHover,
-                  COLOR_THEME.background.tertiaryHover
-                )}
-              >
-                Projects
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className={classNames(
-                  "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
-                  COLOR_THEME.text.tertiaryReverse,
-                  COLOR_THEME.text.tertiaryHover,
-                  COLOR_THEME.border.tertiaryHover,
-                  COLOR_THEME.background.tertiaryHover
-                )}
-              >
-                Calendar
-              </Disclosure.Button>
+
+              {menuItems.map((item, index) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.link}
+                  className={classNames(
+                    "block border-l-4 py-2 pl-3 pr-4 text-base font-medium sm:pl-5 sm:pr-6",
+                    isActivePage(item.link, pathname)
+                      ? [
+                          COLOR_THEME.border.primary,
+                          COLOR_THEME.background.primaryReverse,
+                          COLOR_THEME.text.tertiary,
+                        ].join(" ")
+                      : [
+                          "border-transparent",
+                          COLOR_THEME.text.tertiaryReverse,
+                          COLOR_THEME.text.tertiaryHover,
+                          COLOR_THEME.border.tertiaryHover,
+                          COLOR_THEME.background.tertiaryHover,
+                        ].join(" ")
+                  )}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
             </div>
           </Disclosure.Panel>
         </>
