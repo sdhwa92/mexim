@@ -50,7 +50,12 @@ export default function Home() {
 
         <SimpleFeatureWithColumns features={features} />
 
-        <FeatureWithScreenshot />
+        <div className="py-12 sm:py-16">
+          <FeatureWithScreenshot />
+        </div>
+        <div className="py-12 sm:py-16">
+          <FeatureWithScreenshot imageSide="right" />
+        </div>
 
         <FeatureWithScreenshotPanel />
 

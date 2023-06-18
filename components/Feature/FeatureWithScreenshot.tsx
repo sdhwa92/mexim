@@ -7,6 +7,7 @@ import Image from "next/image";
 import screenshotImage from "@/public/img/Artboard-1-2.webp";
 import { RoundedButton } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
+import { classNames } from "@/utils";
 
 const features = [
   {
@@ -29,9 +30,13 @@ const features = [
   },
 ];
 
-export default function Example() {
+interface Props {
+  imageSide?: "left" | "right";
+}
+
+export default function FeatureWithScreenshot({ imageSide = "left" }: Props) {
   return (
-    <div className="overflow-hidden bg-white py-24 sm:py-32">
+    <div className="overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:ml-auto lg:pl-4 lg:pt-4">
@@ -84,7 +89,12 @@ export default function Example() {
               </div>
             </div>
           </div>
-          <div className="flex items-start justify-end lg:order-first">
+          <div
+            className={classNames(
+              "flex items-start justify-end",
+              imageSide === "left" ? "lg:order-first" : "lg:order-last"
+            )}
+          >
             <Image
               src={screenshotImage}
               width={2432}
