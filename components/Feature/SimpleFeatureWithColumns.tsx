@@ -1,11 +1,5 @@
 import { COLOR_THEME } from "@/constants";
-
-interface IFeature {
-  name: string;
-  description: string;
-  link: string;
-  icon: any;
-}
+import { IFeature } from "@/interfaces";
 
 type AppProps = {
   features: IFeature[];

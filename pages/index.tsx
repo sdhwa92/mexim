@@ -3,6 +3,9 @@ import {
   LifebuoyIcon,
   UserIcon,
   PaperAirplaneIcon,
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
 } from "@heroicons/react/20/solid";
 import { DefaultLayout } from "@/layouts";
 import {
@@ -13,8 +16,10 @@ import { HeroWithAngledImage } from "@/components/Hero";
 import { SimpleNewsletter } from "@/components/Newsletter";
 import { IFeature } from "@/interfaces";
 import FeatureWithScreenshotPanel from "@/components/Feature/FeatureWithScreenshotPanel";
+import extensiveReachImage from "@/public/img/Artboard-1-2.webp";
+import approachableAndAccessibleImage from "@/public/img/pexels-fauxels-3184338.jpg";
 
-const features: IFeature[] = [
+const whyChooseUsfeatures: IFeature[] = [
   {
     name: "Air Freight",
     description:
@@ -38,6 +43,48 @@ const features: IFeature[] = [
   },
 ];
 
+const extensiveReachFeatures = [
+  {
+    name: "Push to deploy.",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: "SSL certificates.",
+    description:
+      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+    icon: LockClosedIcon,
+  },
+  {
+    name: "Database backups.",
+    description:
+      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+    icon: ServerIcon,
+  },
+];
+
+const approachableAndAccessibleFeatures = [
+  {
+    name: "Push to deploy.",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: "SSL certificates.",
+    description:
+      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+    icon: LockClosedIcon,
+  },
+  {
+    name: "Database backups.",
+    description:
+      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+    icon: ServerIcon,
+  },
+];
+
 export default function Home() {
   return (
     <DefaultLayout home>
@@ -48,13 +95,26 @@ export default function Home() {
       <div>
         <HeroWithAngledImage />
 
-        <SimpleFeatureWithColumns features={features} />
+        <SimpleFeatureWithColumns features={whyChooseUsfeatures} />
 
         <div className="py-12 sm:py-16">
-          <FeatureWithScreenshot />
+          <FeatureWithScreenshot
+            screenshotImage={extensiveReachImage}
+            sectionName="Extensive Reach"
+            mainHead="Australian-Owned, with a Global Network"
+            subHead="Our vetted network of 300+ overseas forwarding partner offices was carefully hand-selected by our experienced Board of Directors over the decades. Having multiple options in most countries enables ICE to benchmark the best shipping option available and tailor the most specific logistical requirements."
+            features={extensiveReachFeatures}
+          />
         </div>
         <div className="py-12 sm:py-16">
-          <FeatureWithScreenshot imageSide="right" />
+          <FeatureWithScreenshot
+            screenshotImage={approachableAndAccessibleImage}
+            imageSide="right"
+            sectionName="Approachable & Accessible"
+            mainHead="Fast & Easy Communication"
+            subHead="We understand that your time is valuable. At ICE, you can reach who is managing your shipment directly, without the challenge of going through multiple parties to discuss your business requirements. Our Board of Directors is heavily involved in the business operations and remains open and available to talk to you directly."
+            features={approachableAndAccessibleFeatures}
+          />
         </div>
 
         <FeatureWithScreenshotPanel />

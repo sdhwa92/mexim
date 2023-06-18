@@ -4,8 +4,14 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { RoundedButton } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
 import { classNames, isActivePage } from "@/utils";
+import Image, { StaticImageData } from "next/image";
 
 interface Props {
+  brand: {
+    logoImage: StaticImageData;
+    link?: string;
+    alt: string;
+  };
   menuItems: {
     name: string;
     link: string;
@@ -13,7 +19,7 @@ interface Props {
   }[];
 }
 
-export default function SimpleNavbar({ menuItems }: Props) {
+export default function SimpleNavbar({ menuItems, brand }: Props) {
   const { pathname } = useRouter();
 
   return (
@@ -50,15 +56,12 @@ export default function SimpleNavbar({ menuItems }: Props) {
                     </Disclosure.Button>
                   </div>
                   <div className="flex flex-shrink-0 items-center">
-                    <img
-                      className="block h-8 w-auto lg:hidden"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                      alt="Your Company"
-                    />
-                    <img
-                      className="hidden h-8 w-auto lg:block"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                      alt="Your Company"
+                    <Image
+                      width={200}
+                      height={200}
+                      src={brand.logoImage}
+                      alt={brand.alt}
+                      className="w-auto max-h-36"
                     />
                   </div>
                   <div className="hidden md:ml-6 md:flex md:space-x-8">

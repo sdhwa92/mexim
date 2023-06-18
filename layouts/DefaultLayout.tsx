@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import { SimpleNavbar } from "@/components/Navbar";
 import { SimpleCenteredFooter } from "@/components/Footer";
 import { classNames } from "@/utils";
+import logo from "@/public/img/logo.png";
 
 const dmSans = DM_Sans({
   weight: ["400"],
@@ -23,6 +24,10 @@ export default function DefaultLayout({ children, home }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SimpleNavbar
+        brand={{
+          logoImage: logo,
+          alt: "Mexim logo",
+        }}
         menuItems={[
           {
             name: "Home",
