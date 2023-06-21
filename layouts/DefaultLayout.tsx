@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import { SimpleNavbar } from "@/components/Navbar";
 import { SimpleCenteredFooter } from "@/components/Footer";
 import { classNames } from "@/utils";
+import logo from "@/public/img/logo.png";
 
 const dmSans = DM_Sans({
   weight: ["400"],
@@ -22,7 +23,30 @@ export default function DefaultLayout({ children, home }: Props) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SimpleNavbar />
+      <SimpleNavbar
+        brand={{
+          logoImage: logo,
+          alt: "Mexim logo",
+        }}
+        menuItems={[
+          {
+            name: "Home",
+            link: "/",
+          },
+          {
+            name: "Industries",
+            link: "/industries",
+          },
+          {
+            name: "About",
+            link: "/about",
+          },
+          {
+            name: "Contact",
+            link: "/contact",
+          },
+        ]}
+      />
 
       {/* remove paddings for the container => px-4 sm:px-6 lg:px-8 lg:py-8 sm:py-6 */}
       <div className="container mx-auto">{children}</div>
