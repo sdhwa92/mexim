@@ -49,7 +49,7 @@ export default function DefaultLayout({ children, home }: Props) {
       />
 
       {/* remove paddings for the container => px-4 sm:px-6 lg:px-8 lg:py-8 sm:py-6 */}
-      <div className="container mx-auto">{children}</div>
+      <main className="container mx-auto">{children}</main>
 
       <SimpleCenteredFooter />
     </div>
