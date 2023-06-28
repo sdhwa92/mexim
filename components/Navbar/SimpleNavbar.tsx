@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -68,7 +69,7 @@ export default function SimpleNavbar({ menuItems, brand }: Props) {
                     {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
 
                     {menuItems.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.link}
                         className={classNames(
@@ -88,7 +89,7 @@ export default function SimpleNavbar({ menuItems, brand }: Props) {
                         )}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
