@@ -3,6 +3,7 @@ import Image from "next/image";
 import { DefaultLayout } from "@/layouts";
 import { Button } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
+import { PageTitle } from "@/components/PageTitle";
 
 import contactUsImage from "@/public/img/pexels-fatih-turan-8777703.jpg";
 
@@ -12,6 +13,8 @@ export default function Contact() {
       <Head>
         <title>Contact Us</title>
       </Head>
+
+      <PageTitle>Contact Us</PageTitle>
 
       <div className="relative bg-white">
         <div className="lg:absolute lg:inset-0 lg:left-1/2">
@@ -27,7 +30,7 @@ export default function Contact() {
           <div className="px-6 lg:px-8">
             <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-                Let's work together
+                Let&apos;s work together
               </h2>
               <p className="mt-2 text-lg leading-8 text-gray-600">
                 Proin volutpat consequat porttitor cras nullam gravida at orci
