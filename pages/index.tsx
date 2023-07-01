@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import {
   LifebuoyIcon,
   UserIcon,
@@ -19,48 +20,42 @@ import FeatureWithScreenshotPanel from "@/components/Feature/FeatureWithScreensh
 import extensiveReachImage from "@/public/img/Artboard-1-2.webp";
 import approachableAndAccessibleImage from "@/public/img/pexels-fauxels-3184338.jpg";
 
-const whyChooseUsfeatures: IFeature[] = [
+const whyChooseUsFeatures: IFeature[] = [
   {
-    name: "Air Freight",
+    name: "Extensive Expertise",
     description:
-      "Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.",
-    link: "#",
+      "Our team of experienced professionals brings in-depth knowledge of global trade practices, regulations, and market trends. Benefit from their expertise to streamline your import and export operations.",
+    link: "/about",
     icon: PaperAirplaneIcon,
   },
   {
-    name: "Sea Freight",
+    name: "Practical Insights",
     description:
-      "Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.",
-    link: "#",
+      "Stay up-to-date with the latest industry insights and trends through our thoughtfully curated content. Gain valuable tips and strategies to optimize your import and export processes and maximize your international business potential.",
+    link: "/about",
     icon: LifebuoyIcon,
   },
   {
-    name: "Custom Consultancy",
+    name: "Customized Solutions",
     description:
-      "Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.",
-    link: "#",
+      "We understand that every business has unique requirements. Leverage our personalized solutions tailored to your specific needs, whether you are a seasoned trader or just starting your international business journey.",
+    link: "/about",
     icon: UserIcon,
   },
 ];
 
 const extensiveReachFeatures = [
   {
-    name: "Push to deploy.",
+    name: "Expert Guidance",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Access expert guidance from industry professionals who specialize in import and export. Benefit from our experience and insights as we provide tips, strategies, and best practices to optimize your international trade operations. Get answers to your specific questions and overcome challenges with the help of our knowledgeable team.",
     icon: CloudArrowUpIcon,
   },
   {
-    name: "SSL certificates.",
+    name: "Networking and Collaboration",
     description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+      "Connect with a vibrant community of importers, exporters, trade professionals, and industry experts. Engage in discussions, share experiences, and forge valuable partnerships to expand your network and explore collaborative opportunities in the import-export ecosystem.",
     icon: LockClosedIcon,
-  },
-  {
-    name: "Database backups.",
-    description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: ServerIcon,
   },
 ];
 
@@ -86,6 +81,8 @@ const approachableAndAccessibleFeatures = [
 ];
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <DefaultLayout home>
       <Head>
@@ -93,20 +90,28 @@ export default function Home() {
       </Head>
 
       <div>
-        <HeroWithAngledImage />
+        <HeroWithAngledImage
+          title="All about Import & Export"
+          description={
+            "Expand your business horizons with comprehensive knowledge and insights into the detailed world of import and export. We are your go-to resource for everything related to international trade, providing valuable information, expert guidance, and practical tips to navigate the complexities of importing and exporting goods across borders."
+          }
+        />
 
-        <SimpleFeatureWithColumns features={whyChooseUsfeatures} />
+        <SimpleFeatureWithColumns features={whyChooseUsFeatures} />
 
         <div className="py-12 sm:py-16">
           <FeatureWithScreenshot
             screenshotImage={extensiveReachImage}
             sectionName="Extensive Reach"
             mainHead="Australian-Owned, with a Global Network"
-            subHead="Our vetted network of 300+ overseas forwarding partner offices was carefully hand-selected by our experienced Board of Directors over the decades. Having multiple options in most countries enables ICE to benchmark the best shipping option available and tailor the most specific logistical requirements."
             features={extensiveReachFeatures}
+            cta={{
+              text: "Contact Us",
+              onClick: () => router.push("/contact"),
+            }}
           />
         </div>
-        <div className="py-12 sm:py-16">
+        {/* <div className="py-12 sm:py-16">
           <FeatureWithScreenshot
             screenshotImage={approachableAndAccessibleImage}
             imageSide="right"
@@ -117,7 +122,7 @@ export default function Home() {
           />
         </div>
 
-        <FeatureWithScreenshotPanel />
+        <FeatureWithScreenshotPanel /> */}
 
         <SimpleNewsletter />
       </div>

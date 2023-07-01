@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { COLOR_THEME } from "@/constants";
 import { IFeature } from "@/interfaces";
 
@@ -45,14 +46,16 @@ export default function SimpleFeatureWithColumns({ features }: AppProps) {
                   className={`mt-4 flex flex-auto flex-col text-base leading-7 ${COLOR_THEME.context.pReverse}`}
                 >
                   <p className="flex-auto">{feature.description}</p>
-                  <p className="mt-6">
-                    <a
-                      href={feature.link}
-                      className={`text-sm font-semibold leading-6 ${COLOR_THEME.text.secondary}`}
-                    >
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
-                  </p>
+                  {feature.link && (
+                    <p className="mt-6">
+                      <Link
+                        href={feature.link}
+                        className={`text-sm font-semibold leading-6 ${COLOR_THEME.text.secondary}`}
+                      >
+                        Learn more <span aria-hidden="true">→</span>
+                      </Link>
+                    </p>
+                  )}
                 </dd>
               </div>
             ))}

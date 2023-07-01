@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { DM_Sans } from "next/font/google";
 import { SimpleNavbar } from "@/components/Navbar";
 import { SimpleCenteredFooter } from "@/components/Footer";
@@ -18,6 +19,8 @@ interface Props {
 }
 
 export default function DefaultLayout({ children, home }: Props) {
+  const router = useRouter();
+
   return (
     <div className={classNames("bg-white", dmSans.className)}>
       <Head>
@@ -34,8 +37,8 @@ export default function DefaultLayout({ children, home }: Props) {
             link: "/",
           },
           {
-            name: "Industries",
-            link: "/industries",
+            name: "Products",
+            link: "/products",
           },
           {
             name: "About",
@@ -46,6 +49,10 @@ export default function DefaultLayout({ children, home }: Props) {
             link: "/contact",
           },
         ]}
+        cta={{
+          text: "Request for Quote",
+          onClick: () => router.push("/contact"),
+        }}
       />
 
       {/* remove paddings for the container => px-4 sm:px-6 lg:px-8 lg:py-8 sm:py-6 */}

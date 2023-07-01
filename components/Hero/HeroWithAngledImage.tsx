@@ -1,9 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { COLOR_THEME } from "@/constants";
 import { Button } from "@/ui/Button";
 import heroImage from "@/public/img/aerial-view-cargo-ship-cargo-container-harbor.jpg";
 
-export default function HeroWithAngledImage() {
+type AppProps = {
+  title: string;
+  description: string;
+};
+
+export default function HeroWithAngledImage({ title, description }: AppProps) {
+  const router = useRouter();
+
   return (
     <div className="bg-white">
       <div className="relative">
@@ -35,33 +44,31 @@ export default function HeroWithAngledImage() {
                 <h1
                   className={`text-4xl font-bold tracking-tight ${COLOR_THEME.context.h1} sm:text-6xl`}
                 >
-                  We Consult. We Plan. We Deliver.
+                  {title}
                 </h1>
                 <p
                   className={`mt-6 text-lg leading-8 ${COLOR_THEME.context.p}`}
                 >
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                  occaecat fugiat aliqua.
+                  {description}
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Button
                     dataTestId="heroCtaBtn"
-                    onClick={() => alert("click")}
+                    onClick={() => router.push("/contact")}
                     color={COLOR_THEME.background.primary}
                     hoverColor={COLOR_THEME.background.primaryHover}
                     outlineColor={COLOR_THEME.outline.primaryFocusVisible}
                     textColor={"text-white"}
                     size="xl"
                   >
-                    Get Started
+                    Contact Us
                   </Button>
-                  <a
-                    href="#"
+                  <Link
+                    href="/about"
                     className={`text-sm font-semibold leading-6 ${COLOR_THEME.context.h1}`}
                   >
                     Learn more <span aria-hidden="true">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

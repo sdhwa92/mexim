@@ -5,41 +5,44 @@ import { Container } from "@/ui/Container";
 import { PageTitle } from "@/components/PageTitle";
 
 const stats = [
-  { label: "Transactions every 24 hours", value: "44 million" },
+  {
+    label: "Number of manufacturing businesses in South Korea",
+    value: "70,000",
+  },
   { label: "Assets under holding", value: "$119 trillion" },
   { label: "New users annually", value: "46,000" },
 ];
 
 const values = [
   {
-    name: "Be world-class",
+    name: "Quality",
     description:
-      "Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.",
+      "We are committed to delivering products of the highest quality to our clients. We carefully select suppliers and products that meet stringent standards, ensuring that our customers receive goods that are reliable, durable, and meet their expectations.",
   },
   {
-    name: "Share everything you know",
+    name: "Affordability",
     description:
-      "Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.",
+      "We believe that access to quality products should not come at a high cost. We strive to offer competitive prices that make our imported products affordable and accessible to local businesses. By providing cost-effective solutions, we help our clients enhance their competitiveness in the market.",
   },
   {
-    name: "Always learning",
+    name: "Integrity",
     description:
-      "Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.",
+      "We conduct our business with the utmost integrity and transparency. Honesty, fairness, and ethical practices are at the core of everything we do. We build trust with our clients, suppliers, and partners by maintaining open and honest communication and by upholding the highest ethical standards.",
   },
   {
-    name: "Be supportive",
+    name: "Customer Satisfaction",
     description:
-      "Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.",
+      "Our customers are the heart of our business. We prioritize their needs and go above and beyond to ensure their satisfaction. From personalized service to timely delivery, we strive to exceed customer expectations and build long-term relationships based on trust and exceptional service.",
   },
   {
-    name: "Take responsibility",
+    name: "Innovationy",
     description:
-      "Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.",
+      "We embrace innovation as a driving force behind our business. We continuously seek new and innovative solutions to better serve our clients and adapt to the ever-changing market demands. We stay ahead of trends, technologies, and consumer preferences to provide our customers with innovative products that meet their evolving needs.",
   },
   {
-    name: "Enjoy downtime",
+    name: "Collaboration",
     description:
-      "Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.",
+      "We believe in the power of collaboration. We foster strong partnerships with our suppliers, clients, and industry stakeholders, working together to create mutually beneficial outcomes. By fostering a collaborative environment, we enhance our collective expertise, expand our networks, and achieve shared success.",
   },
 ];
 
@@ -59,48 +62,39 @@ export default function About() {
             Our mission
           </h2>
           <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
-            <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-              <p className="text-xl leading-8 text-gray-600">
-                Our mission is to foster global partnerships and enable
-                businesses to thrive in the international marketplace. We are
-                dedicated to delivering reliable, efficient, and cost-effective
-                import and export services while maintaining the highest
-                standards of professionalism and integrity.
+            <div className="lg:w-full lg:flex-auto text-lg leading-8 text-gray-600">
+              <p>
+                At MEXIM, our mission is to bridge the gap between local
+                businesses in Australia and the vast potential of the South
+                Korean market. We are dedicated to providing businesses with
+                exposure to new, high-quality products from overseas markets at
+                significantly lower prices. Our goal is to empower Australian
+                businesses by connecting them with reputable suppliers in South
+                Korea, unlocking a world of opportunities for growth and
+                profitability.
               </p>
-              <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
-                <p>
-                  Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
-                  risus enim. Mattis mauris semper sed amet vitae sed turpis id.
-                  Id dolor praesent donec est. Odio penatibus risus viverra
-                  tellus varius sit neque erat velit. Faucibus commodo massa
-                  rhoncus, volutpat. Dignissim sed eget risus enim. Mattis
-                  mauris semper sed amet vitae sed turpis id.
-                </p>
-                <p className="mt-10">
-                  Et vitae blandit facilisi magna lacus commodo. Vitae sapien
-                  duis odio id et. Id blandit molestie auctor fermentum
-                  dignissim. Lacus diam tincidunt ac cursus in vel. Mauris
-                  varius vulputate et ultrices hac adipiscing egestas. Iaculis
-                  convallis ac tempor et ut. Ac lorem vel integer orci.
-                </p>
-              </div>
-            </div>
-            <div className="lg:flex lg:flex-auto lg:justify-center">
-              <dl className="w-64 space-y-8 xl:w-80">
-                {stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="flex flex-col-reverse gap-y-4"
-                  >
-                    <dt className="text-base leading-7 text-gray-600">
-                      {stat.label}
-                    </dt>
-                    <dd className="text-5xl font-semibold tracking-tight text-gray-900">
-                      {stat.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="mt-10">
+                Looking ahead, MEXIM aims to go beyond being a facilitator of
+                product sourcing. We envision offering services that provide
+                access to up-to-date market data, enabling you to make informed
+                business decisions and forge connections with compatible
+                businesses in both hemispheres. Our goal is to foster long-term
+                partnerships and create a thriving ecosystem of collaboration,
+                where businesses in Australia and South Korea can mutually
+                benefit from each other&apos;s strengths.
+              </p>
+              <p className="mt-10">
+                Join us at MEXIM and embark on a journey of discovering new
+                opportunities, expanding your product range, and achieving
+                sustainable growth. Let us be your trusted partner in navigating
+                the South Korean market and unlocking the potential that lies
+                within.
+              </p>
+
+              <p className="mt-10">
+                Contact us today to discuss how we can assist you in realizing
+                your business goals and taking your operations to new heights.
+              </p>
             </div>
           </div>
         </div>
@@ -125,8 +119,9 @@ export default function About() {
               Our values
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
-              magnam voluptatum cupiditate veritatis in accusamus quisquam.
+              With a commitment to these values, we strive to exceed
+              expectations, build lasting partnerships, and drive positive
+              impact in the market.
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">

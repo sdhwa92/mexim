@@ -18,9 +18,13 @@ interface Props {
     link: string;
     isNewTab?: boolean;
   }[];
+  cta?: {
+    text: string;
+    onClick: () => void;
+  };
 }
 
-export default function SimpleNavbar({ menuItems, brand }: Props) {
+export default function SimpleNavbar({ menuItems, brand, cta }: Props) {
   const { pathname } = useRouter();
 
   return (
@@ -56,15 +60,17 @@ export default function SimpleNavbar({ menuItems, brand }: Props) {
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className="flex flex-shrink-0 items-center">
-                    <Image
-                      width={200}
-                      height={200}
-                      src={brand.logoImage}
-                      alt={brand.alt}
-                      className="w-auto max-h-36"
-                    />
-                  </div>
+                  <Link href="/">
+                    <div className="flex flex-shrink-0 items-center">
+                      <Image
+                        width={200}
+                        height={200}
+                        src={brand.logoImage}
+                        alt={brand.alt}
+                        className="w-auto max-h-36"
+                      />
+                    </div>
+                  </Link>
                   <div className="hidden md:ml-6 md:flex md:space-x-8">
                     {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
 
@@ -93,22 +99,24 @@ export default function SimpleNavbar({ menuItems, brand }: Props) {
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <RoundedButton
-                      dataTestId="navbar-left-button"
-                      onClick={() => alert("click")}
-                      extraClassNames="uppercase"
-                      color={COLOR_THEME.background.primary}
-                      hoverColor={COLOR_THEME.background.primaryHover}
-                      outlineColor={COLOR_THEME.outline.primaryFocusVisible}
-                      textColor={"text-white"}
-                      size="xl"
-                    >
-                      Request a Quote
-                    </RoundedButton>
+                {cta && (
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <RoundedButton
+                        dataTestId="navbar-left-button"
+                        onClick={cta.onClick}
+                        extraClassNames="uppercase"
+                        color={COLOR_THEME.background.primary}
+                        hoverColor={COLOR_THEME.background.primaryHover}
+                        outlineColor={COLOR_THEME.outline.primaryFocusVisible}
+                        textColor={"text-white"}
+                        size="xl"
+                      >
+                        {cta.text}
+                      </RoundedButton>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

@@ -12,6 +12,10 @@ interface Props {
   subHead?: string;
   features: IFeature[];
   screenshotImage: StaticImageData;
+  cta?: {
+    text: string;
+    onClick: () => void;
+  };
 }
 
 export default function FeatureWithScreenshot({
@@ -21,6 +25,7 @@ export default function FeatureWithScreenshot({
   subHead,
   features,
   screenshotImage,
+  cta,
 }: Props) {
   return (
     <div className="overflow-hidden bg-white">
@@ -38,9 +43,14 @@ export default function FeatureWithScreenshot({
               >
                 {mainHead}
               </p>
-              <p className={`mt-6 text-lg leading-8 ${COLOR_THEME.context.h3}`}>
-                {subHead}
-              </p>
+              {subHead && (
+                <p
+                  className={`mt-6 text-lg leading-8 ${COLOR_THEME.context.h3}`}
+                >
+                  {subHead}
+                </p>
+              )}
+
               <dl
                 className={`mt-10 max-w-xl space-y-8 text-base leading-7 ${COLOR_THEME.context.p} lg:max-w-none`}
               >
@@ -60,17 +70,19 @@ export default function FeatureWithScreenshot({
                 ))}
               </dl>
               <div className="my-8">
-                <RoundedButton
-                  onClick={() => alert("click")}
-                  extraClassNames="uppercase"
-                  color={COLOR_THEME.background.primary}
-                  hoverColor={COLOR_THEME.background.primaryHover}
-                  outlineColor={COLOR_THEME.outline.primaryFocusVisible}
-                  textColor={"text-white"}
-                  size="xl"
-                >
-                  Read our success stories
-                </RoundedButton>
+                {cta && (
+                  <RoundedButton
+                    onClick={cta.onClick}
+                    extraClassNames="uppercase"
+                    color={COLOR_THEME.background.primary}
+                    hoverColor={COLOR_THEME.background.primaryHover}
+                    outlineColor={COLOR_THEME.outline.primaryFocusVisible}
+                    textColor={"text-white"}
+                    size="xl"
+                  >
+                    {cta.text}
+                  </RoundedButton>
+                )}
               </div>
             </div>
           </div>
