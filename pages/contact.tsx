@@ -88,7 +88,7 @@ export default function Contact() {
                         name="firstName"
                         id="firstName"
                         autoComplete="given-name"
-                        className="px-3.5 py-2"
+                        className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.firstName}
                         onChange={handleChange}
                       />
@@ -107,7 +107,7 @@ export default function Contact() {
                         name="lastName"
                         id="lastName"
                         autoComplete="family-name"
-                        className="px-3.5 py-2"
+                        className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.lastName}
                         onChange={handleChange}
                       />
@@ -126,7 +126,7 @@ export default function Contact() {
                         name="email"
                         type="email"
                         autoComplete="email"
-                        className="px-3.5 py-2"
+                        className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.email}
                         onChange={handleChange}
                       />
@@ -145,7 +145,7 @@ export default function Contact() {
                         name="company"
                         id="company"
                         autoComplete="organization"
-                        className="px-3.5 py-2"
+                        className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.company}
                         onChange={handleChange}
                       />
@@ -170,7 +170,7 @@ export default function Contact() {
                         id="phone"
                         autoComplete="tel"
                         aria-describedby="phone-description"
-                        className="px-3.5 py-2"
+                        className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.phone}
                         onChange={handleChange}
                       />
@@ -194,7 +194,7 @@ export default function Contact() {
                         name="message"
                         rows={4}
                         aria-describedby="message-description"
-                        className="px-3.5 py-2"
+                        className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         defaultValue={""}
                         value={values.message}
                         onChange={handleChange}
