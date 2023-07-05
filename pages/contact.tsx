@@ -4,6 +4,7 @@ import { useState, ChangeEvent } from "react";
 import { DefaultLayout } from "@/layouts";
 import { Button } from "@/ui/Button";
 import { Input } from "@/ui/Input";
+import { Textarea } from "@/ui/Textarea";
 import { COLOR_THEME } from "@/constants";
 import { PageTitle } from "@/components/PageTitle";
 import { sendContactForm } from "@/lib/api";
@@ -188,12 +189,12 @@ export default function Contact() {
                       </p>
                     </div>
                     <div className="mt-2.5">
-                      <textarea
+                      <Textarea
                         id="message"
                         name="message"
                         rows={4}
                         aria-describedby="message-description"
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="px-3.5 py-2"
                         defaultValue={""}
                         value={values.message}
                         onChange={handleChange}
