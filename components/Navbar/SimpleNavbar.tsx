@@ -4,7 +4,7 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { RoundedButton } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
-import { classNames, isActivePage } from "@/utils";
+import { classNames, isActivePage } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 
 interface Props {

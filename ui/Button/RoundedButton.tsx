@@ -1,6 +1,6 @@
 import { FC } from "react";
 import IButtonProps, { ButtonSize } from "./IButtonProps";
-import { classNames } from "@/utils";
+import { classNames } from "@/lib/utils";
 
 const RoundedButton: FC<IButtonProps> = ({
   dataTestId,

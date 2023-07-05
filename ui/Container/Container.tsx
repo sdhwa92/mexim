@@ -1,4 +1,4 @@
-import { classNames } from "@/utils";
+import { classNames } from "@/lib/utils";
 import { ReactElement } from "react";
 
 type AppProps = {

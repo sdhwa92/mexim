@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Container } from "@/ui/Container";
 import { COLOR_THEME } from "@/constants";
-import { classNames } from "@/utils";
+import { classNames } from "@/lib/utils";
 
 type AppProps = {
   children: ReactNode;

@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { DM_Sans } from "next/font/google";
 import { SimpleNavbar } from "@/components/Navbar";
 import { SimpleCenteredFooter } from "@/components/Footer";
-import { classNames } from "@/utils";
+import { classNames } from "@/lib/utils";
 import logo from "@/public/img/logo.png";
 
 const dmSans = DM_Sans({

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, ChangeEvent } from "react";
 import { DefaultLayout } from "@/layouts";
 import { Button } from "@/ui/Button";
+import { Input } from "@/ui/Input";
 import { COLOR_THEME } from "@/constants";
 import { PageTitle } from "@/components/PageTitle";
 import { sendContactForm } from "@/lib/api";
@@ -81,12 +82,12 @@ export default function Contact() {
                       First name
                     </label>
                     <div className="mt-2.5">
-                      <input
+                      <Input
                         type="text"
                         name="firstName"
                         id="firstName"
                         autoComplete="given-name"
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="px-3.5 py-2"
                         value={values.firstName}
                         onChange={handleChange}
                       />
@@ -100,12 +101,12 @@ export default function Contact() {
                       Last name
                     </label>
                     <div className="mt-2.5">
-                      <input
+                      <Input
                         type="text"
                         name="lastName"
                         id="lastName"
                         autoComplete="family-name"
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="px-3.5 py-2"
                         value={values.lastName}
                         onChange={handleChange}
                       />
@@ -119,12 +120,12 @@ export default function Contact() {
                       Email
                     </label>
                     <div className="mt-2.5">
-                      <input
+                      <Input
                         id="email"
                         name="email"
                         type="email"
                         autoComplete="email"
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="px-3.5 py-2"
                         value={values.email}
                         onChange={handleChange}
                       />
@@ -138,12 +139,12 @@ export default function Contact() {
                       Company
                     </label>
                     <div className="mt-2.5">
-                      <input
+                      <Input
                         type="text"
                         name="company"
                         id="company"
                         autoComplete="organization"
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="px-3.5 py-2"
                         value={values.company}
                         onChange={handleChange}
                       />
@@ -162,13 +163,13 @@ export default function Contact() {
                       </p>
                     </div>
                     <div className="mt-2.5">
-                      <input
+                      <Input
                         type="tel"
                         name="phone"
                         id="phone"
                         autoComplete="tel"
                         aria-describedby="phone-description"
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="px-3.5 py-2"
                         value={values.phone}
                         onChange={handleChange}
                       />

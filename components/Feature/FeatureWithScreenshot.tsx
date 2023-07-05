@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 
 import { RoundedButton } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
-import { classNames } from "@/utils";
+import { classNames } from "@/lib/utils";
 import { IFeature } from "@/interfaces";
 
 interface Props {

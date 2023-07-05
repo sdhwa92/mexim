@@ -1,6 +1,6 @@
 import { Button } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
-import { classNames } from "@/utils";
+import { classNames } from "@/lib/utils";
 
 export default function SimpleNewsletter() {
   return (
