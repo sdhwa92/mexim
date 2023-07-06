@@ -12,6 +12,8 @@ import { IContactBody } from "@/interfaces";
 
 import contactUsImage from "@/public/img/pexels-fatih-turan-8777703.jpg";
 
+const REQUIRED_ERROR_MESSAGE = "Required";
+
 const initValues: IContactBody = {
   firstName: "",
   lastName: "",
@@ -23,8 +25,18 @@ const initValues: IContactBody = {
 
 const initState = { values: initValues };
 
+type TouchedFields = {
+  firstName?: boolean;
+  lastName?: boolean;
+  email?: boolean;
+  company?: boolean;
+  phone?: boolean;
+  message?: boolean;
+};
+
 export default function Contact() {
   const [state, setState] = useState(initState);
+  const [touched, setTouched] = useState<TouchedFields>({});
 
   const { values } = state;
 
@@ -38,6 +50,11 @@ export default function Contact() {
         [target.name]: target.value,
       },
     }));
+
+  const onBlur = ({
+    target,
+  }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setTouched((prev) => ({ ...prev, [target.name]: true }));
 
   const onSubmit = async () => {
     await sendContactForm(values);
@@ -91,6 +108,12 @@ export default function Contact() {
                         className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.firstName}
                         onChange={handleChange}
+                        onBlur={onBlur}
+                        error={
+                          touched.firstName && !values.firstName
+                            ? REQUIRED_ERROR_MESSAGE
+                            : undefined
+                        }
                       />
                     </div>
                   </div>
@@ -110,6 +133,12 @@ export default function Contact() {
                         className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.lastName}
                         onChange={handleChange}
+                        onBlur={onBlur}
+                        error={
+                          touched.lastName && !values.lastName
+                            ? REQUIRED_ERROR_MESSAGE
+                            : undefined
+                        }
                       />
                     </div>
                   </div>
@@ -129,6 +158,12 @@ export default function Contact() {
                         className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.email}
                         onChange={handleChange}
+                        onBlur={onBlur}
+                        error={
+                          touched.email && !values.email
+                            ? REQUIRED_ERROR_MESSAGE
+                            : undefined
+                        }
                       />
                     </div>
                   </div>
@@ -148,6 +183,12 @@ export default function Contact() {
                         className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.company}
                         onChange={handleChange}
+                        onBlur={onBlur}
+                        error={
+                          touched.company && !values.company
+                            ? REQUIRED_ERROR_MESSAGE
+                            : undefined
+                        }
                       />
                     </div>
                   </div>
@@ -173,6 +214,12 @@ export default function Contact() {
                         className={`px-3.5 py-2 ${COLOR_THEME.ring.secondaryFocus}`}
                         value={values.phone}
                         onChange={handleChange}
+                        onBlur={onBlur}
+                        error={
+                          touched.phone && !values.phone
+                            ? REQUIRED_ERROR_MESSAGE
+                            : undefined
+                        }
                       />
                     </div>
                   </div>
@@ -198,6 +245,12 @@ export default function Contact() {
                         defaultValue={""}
                         value={values.message}
                         onChange={handleChange}
+                        onBlur={onBlur}
+                        error={
+                          touched.message && !values.message
+                            ? REQUIRED_ERROR_MESSAGE
+                            : undefined
+                        }
                       />
                     </div>
                   </div>
