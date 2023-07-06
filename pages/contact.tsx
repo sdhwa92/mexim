@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, MouseEventHandler } from "react";
 import { DefaultLayout } from "@/layouts";
 import { Button } from "@/ui/Button";
 import { Input } from "@/ui/Input";
@@ -23,7 +23,7 @@ const initValues: IContactBody = {
   message: "",
 };
 
-const initState = { values: initValues };
+const initState = { values: initValues, isLoading: false };
 
 type TouchedFields = {
   firstName?: boolean;
@@ -38,7 +38,7 @@ export default function Contact() {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState<TouchedFields>({});
 
-  const { values } = state;
+  const { values, isLoading } = state;
 
   const handleChange = ({
     target,
@@ -56,7 +56,12 @@ export default function Contact() {
   }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setTouched((prev) => ({ ...prev, [target.name]: true }));
 
-  const onSubmit = async () => {
+  const onSubmit: MouseEventHandler<HTMLButtonElement> = async (event) => {
+    event.preventDefault();
+    setState((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
     await sendContactForm(values);
   };
 
