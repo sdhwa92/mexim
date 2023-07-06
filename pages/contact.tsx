@@ -215,11 +215,6 @@ export default function Contact() {
                         value={values.phone}
                         onChange={handleChange}
                         onBlur={onBlur}
-                        error={
-                          touched.phone && !values.phone
-                            ? REQUIRED_ERROR_MESSAGE
-                            : undefined
-                        }
                       />
                     </div>
                   </div>
@@ -265,6 +260,13 @@ export default function Contact() {
                       COLOR_THEME.outline.primaryFocusVisible,
                     ].join(" ")}
                     size="xl"
+                    disabled={
+                      !values.firstName ||
+                      !values.lastName ||
+                      !values.email ||
+                      !values.company ||
+                      !values.message
+                    }
                   >
                     Send Message
                   </Button>
