@@ -259,10 +259,11 @@ export default function Contact() {
                   <Button
                     type="submit"
                     onClick={onSubmit}
-                    color={COLOR_THEME.background.primary}
-                    hoverColor={COLOR_THEME.background.primaryHover}
-                    outlineColor={COLOR_THEME.outline.primaryFocusVisible}
-                    textColor={"text-white"}
+                    className={[
+                      COLOR_THEME.background.primary,
+                      COLOR_THEME.background.primaryHover,
+                      COLOR_THEME.outline.primaryFocusVisible,
+                    ].join(" ")}
                     size="xl"
                   >
                     Send Message

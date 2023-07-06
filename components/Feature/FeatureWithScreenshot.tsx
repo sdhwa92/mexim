@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 
-import { RoundedButton } from "@/ui/Button";
+import { Button } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
 import { classNames } from "@/lib/utils";
 import { IFeature } from "@/interfaces";
@@ -71,17 +71,19 @@ export default function FeatureWithScreenshot({
               </dl>
               <div className="my-8">
                 {cta && (
-                  <RoundedButton
+                  <Button
                     onClick={cta.onClick}
-                    extraClassNames="uppercase"
-                    color={COLOR_THEME.background.primary}
-                    hoverColor={COLOR_THEME.background.primaryHover}
-                    outlineColor={COLOR_THEME.outline.primaryFocusVisible}
-                    textColor={"text-white"}
+                    className={[
+                      COLOR_THEME.background.primary,
+                      COLOR_THEME.background.primaryHover,
+                      COLOR_THEME.outline.primaryFocusVisible,
+                      "uppercase",
+                      "rounded-full",
+                    ].join(" ")}
                     size="xl"
                   >
                     {cta.text}
-                  </RoundedButton>
+                  </Button>
                 )}
               </div>
             </div>

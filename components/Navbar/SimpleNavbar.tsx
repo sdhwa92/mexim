@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { RoundedButton } from "@/ui/Button";
+import { Button } from "@/ui/Button";
 import { COLOR_THEME } from "@/constants";
 import { classNames, isActivePage } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
@@ -102,18 +102,19 @@ export default function SimpleNavbar({ menuItems, brand, cta }: Props) {
                 {cta && (
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <RoundedButton
-                        dataTestId="navbar-left-button"
+                      <Button
                         onClick={cta.onClick}
-                        extraClassNames="uppercase"
-                        color={COLOR_THEME.background.primary}
-                        hoverColor={COLOR_THEME.background.primaryHover}
-                        outlineColor={COLOR_THEME.outline.primaryFocusVisible}
-                        textColor={"text-white"}
+                        className={[
+                          COLOR_THEME.background.primary,
+                          COLOR_THEME.background.primaryHover,
+                          COLOR_THEME.outline.primaryFocusVisible,
+                          "uppercase",
+                          "rounded-full",
+                        ].join(" ")}
                         size="xl"
                       >
                         {cta.text}
-                      </RoundedButton>
+                      </Button>
                     </div>
                   </div>
                 )}

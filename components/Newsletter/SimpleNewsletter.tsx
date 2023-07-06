@@ -37,8 +37,10 @@ export default function SimpleNewsletter() {
             />
             <Button
               type="submit"
-              color={COLOR_THEME.background.primary}
-              hoverColor={COLOR_THEME.background.primaryHover}
+              className={[
+                COLOR_THEME.background.primary,
+                COLOR_THEME.background.primaryHover,
+              ].join(" ")}
               onClick={() => {
                 alert("click");
               }}

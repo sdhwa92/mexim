@@ -53,12 +53,12 @@ export default function HeroWithAngledImage({ title, description }: AppProps) {
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Button
-                    dataTestId="heroCtaBtn"
                     onClick={() => router.push("/contact")}
-                    color={COLOR_THEME.background.primary}
-                    hoverColor={COLOR_THEME.background.primaryHover}
-                    outlineColor={COLOR_THEME.outline.primaryFocusVisible}
-                    textColor={"text-white"}
+                    className={[
+                      COLOR_THEME.background.primary,
+                      COLOR_THEME.background.primaryHover,
+                      COLOR_THEME.outline.primaryFocusVisible,
+                    ].join(" ")}
                     size="xl"
                   >
                     Contact Us
