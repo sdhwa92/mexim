@@ -12,6 +12,14 @@ import { IContactBody } from "@/interfaces";
 
 import contactUsImage from "@/public/img/pexels-fatih-turan-8777703.jpg";
 
+interface ContactFormState {
+  values: IContactBody;
+  isLoading: boolean;
+  error?: {
+    message: string;
+  };
+}
+
 const REQUIRED_ERROR_MESSAGE = "Required";
 
 const initValues: IContactBody = {
@@ -23,7 +31,10 @@ const initValues: IContactBody = {
   message: "",
 };
 
-const initState = { values: initValues, isLoading: false };
+const initState: ContactFormState = {
+  values: initValues,
+  isLoading: false,
+};
 
 type TouchedFields = {
   firstName?: boolean;
@@ -38,7 +49,7 @@ export default function Contact() {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState<TouchedFields>({});
 
-  const { values, isLoading } = state;
+  const { values, isLoading, error } = state;
 
   const handleChange = ({
     target,
@@ -62,7 +73,18 @@ export default function Contact() {
       ...prev,
       isLoading: true,
     }));
-    await sendContactForm(values);
+
+    try {
+      await sendContactForm(values);
+      setTouched({});
+      setState(initState);
+    } catch (error) {
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: error.message,
+      }));
+    }
   };
 
   return (
