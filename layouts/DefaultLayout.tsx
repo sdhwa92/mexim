@@ -33,10 +33,6 @@ export default function DefaultLayout({ children, home }: Props) {
         }}
         menuItems={[
           {
-            name: "Home",
-            link: "/",
-          },
-          {
             name: "Products",
             link: "/products",
           },
@@ -58,7 +54,39 @@ export default function DefaultLayout({ children, home }: Props) {
       {/* remove paddings for the container => px-4 sm:px-6 lg:px-8 lg:py-8 sm:py-6 */}
       <main className="container mx-auto">{children}</main>
 
-      <SimpleCenteredFooter />
+      <SimpleCenteredFooter
+        menu={[
+          {
+            name: "Products",
+            href: "/products",
+          },
+          {
+            name: "About",
+            href: "/about",
+          },
+          {
+            name: "Contact",
+            href: "/contact",
+          },
+        ]}
+        social={[
+          {
+            name: "Facebook",
+            type: "fb",
+            href: "#",
+          },
+          {
+            name: "Instagram",
+            type: "in",
+            href: "#",
+          },
+          {
+            name: "Twitter",
+            type: "tw",
+            href: "#",
+          },
+        ]}
+      />
     </div>
   );
 }
