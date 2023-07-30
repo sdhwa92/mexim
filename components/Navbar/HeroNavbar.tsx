@@ -9,7 +9,7 @@ const navigation = [
   { name: "Company", href: "#" },
 ];
 
-export default function SimpleNavbar() {
+export default function HeroNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (

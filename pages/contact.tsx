@@ -82,7 +82,9 @@ export default function Contact() {
       setState((prev) => ({
         ...prev,
         isLoading: false,
-        error: error.message,
+        error: {
+          message: "Failed to send the message",
+        },
       }));
     }
   };

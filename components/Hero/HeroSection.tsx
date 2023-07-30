@@ -1,10 +1,30 @@
 import Image from "next/image";
 import { SimpleNavbar } from "../Navbar";
+import logo from "@/public/img/logo.png";
 
 export default function HeroSection() {
   return (
     <div className="bg-gray-900">
-      <SimpleNavbar />
+      <SimpleNavbar
+        brand={{
+          logoImage: logo,
+          alt: "Mexim logo",
+        }}
+        menuItems={[
+          {
+            name: "Products",
+            link: "/products",
+          },
+          {
+            name: "About",
+            link: "/about",
+          },
+          {
+            name: "Contact",
+            link: "/contact",
+          },
+        ]}
+      />
 
       <div className="relative isolate overflow-hidden pt-14">
         <Image
