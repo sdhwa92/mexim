@@ -21,13 +21,13 @@ export default function SimpleFeatureWithColumns({ features }: AppProps) {
           >
             Full-Service International Freight Forwarders
           </p>
-          <p
+          {/* <p
             className={`mt-6 text-lg leading-8 ${COLOR_THEME.context.pReverse}`}
           >
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
             Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
             In mi viverra elit nunc.
-          </p>
+          </p> */}
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
