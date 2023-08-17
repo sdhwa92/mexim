@@ -35,6 +35,7 @@ export default function DefaultLayout({ children, home }: Props) {
           {
             name: "Products",
             link: "/products",
+            isDisabled: true,
           },
           {
             name: "About",

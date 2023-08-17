@@ -17,6 +17,7 @@ interface Props {
     name: string;
     link: string;
     isNewTab?: boolean;
+    isDisabled?: boolean;
   }[];
   cta?: {
     text: string;
@@ -77,7 +78,7 @@ export default function SimpleNavbar({ menuItems, brand, cta }: Props) {
                     {menuItems.map((item) => (
                       <Link
                         key={item.name}
-                        href={item.link}
+                        href={!item.isDisabled ? item.link : "#"}
                         className={classNames(
                           "inline-flex items-center px-1 pt-1 text-sm font-medium uppercase",
                           isActivePage(item.link, pathname)
